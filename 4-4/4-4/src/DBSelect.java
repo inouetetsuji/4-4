@@ -23,7 +23,7 @@ public class DBSelect {
     private static final String POSTGRES_DRIVER = "org.postgresql.Driver";
     /** ・JDMC接続先情報 */
     // 問① データベースのホスト名・データベース名を定数にしなさい。
-    private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/lessonn_db";
+    private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/lesson_db";
     /** ・ユーザー名 */
     // 問② データベースのユーザー名を定数にしなさい。
     private static final String USER = "postgres";
@@ -44,7 +44,7 @@ public class DBSelect {
             JDBC_CONNECTION,USER,PASS);
             statement = connection.createStatement();
             // 問⑤ SHOHIN_IDが001と020のものを表示させるためのSQL文を記述しましょう。
-            String SQL = "SELECT * FROM tb_shohin WHERE SHOHIN_ID=001,020";
+            String SQL = "SELECT * FROM tb_shohin WHERE SHOHIN_ID='001' or SHOHIN_ID='020'";
             resultSet = statement.executeQuery(SQL);
 
             while (resultSet.next()) {

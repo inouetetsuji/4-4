@@ -24,7 +24,7 @@ public class DBUpdate {
     private static final String POSTGRES_DRIVER = "org.postgresql.Driver";
     /** ・JDMC接続先情報 */
     // 問① データベースのホスト名・データベース名を定数にしなさい。
-    private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/lessonn_db";
+    private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/lesson_db";
     /** ・ユーザー名 */
     // 問② データベースのユーザー名を定数にしなさい
     private static final String USER = "postgres";
@@ -46,7 +46,7 @@ public class DBUpdate {
             statement = connection.createStatement();
 
             // 問⑤ SHOHIN_IDが020のSHOHIN_NAMEを「商品20」 set HERE に変更するためのSQL文を記述しましょう。
-            String SQL = "UPDATE tb_shohin  SET SHOHIN_NAME = 商品20'  WHERE SHOHIN_ID = 020" ;
+            String SQL = "UPDATE tb_shohin  SET SHOHIN_NAME = '商品20'  WHERE SHOHIN_ID = '020'" ;
             statement.executeUpdate(SQL);
             //一覧表示
             String SQLselect = "SELECT * FROM TB_SHOHIN";
